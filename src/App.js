@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './App.css';
 class App extends React.Component{
 
   constructor(props){
@@ -41,17 +42,21 @@ class App extends React.Component{
 
     return(
       <div>
-        <h1>location</h1>
+        <h1 id = 'header'>Location</h1>
         <form onSubmit={this.gitLocData}>
           <input type="text" name="city" placeholder='Enter a city' ></input>
           <button type='submit'>Submit</button> 
         </form>
+        <h4>
         <h3>Display name: {this.state.display_name} </h3>
         <p>Lon : {this.state.lon}</p>
         <p>Lat : {this.state.lat}</p>
 
         {this.state.errorFlag && <h4>Error 404 : {this.state.error}</h4>}
         <img src= {this.state.image} />
+
+        </h4>
+        
       </div>
     )
   }
